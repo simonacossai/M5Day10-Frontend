@@ -8,12 +8,11 @@ import {AiFillInfoCircle} from 'react-icons/ai';
 class JumbotronComponent extends React.Component {
   render(props) {
     return (
-      <Jumbotron fluid style={{ height: "100vh", position: "relative" }} className="p-0 mb-0 jumbotron">
+      <Jumbotron fluid style={{position: "relative" }} className="p-0 mb-0 jumbotron">
       <div
-        className="d-flex align-items-center justify-content-center overlay"
+        className="overlay"
         style={{
           width: "100%",
-          height: "100%",
           zIndex: "0",
           overflow: "hidden",
         }}
@@ -22,18 +21,13 @@ class JumbotronComponent extends React.Component {
       </div>
 
       <div
-        className="pl-5"
-        style={{
-          position: "absolute",
-          zIndex: "5000",
-          top: "67%",
-          color: "#fff",
-        }}
+        className="pl-5 text-div"
+    
       >
       <h1 className="movie-title">Dark</h1>
       <div className="d-flex">
-        <Button className="watch mr-3"><BsPlayFill className="mr-1" style={{fontSize:"28px"}}/>Watch</Button>
-        <Button className="more"><AiFillInfoCircle className="mr-1" style={{fontSize:"28px"}}/>More info</Button>
+        <Button className="watch mr-3"><BsPlayFill className="mr-1 play" />Watch</Button>
+        <Button className="more"><AiFillInfoCircle className="mr-1 info"/>More info</Button>
 
       </div>
       </div>

@@ -17,7 +17,8 @@ class MovieList extends React.Component {
 
   fetchMovies = async (titles) => {
     try {
-      const response = await fetch("http://www.omdbapi.com/?apikey=ada5e6d6&s=" + titles,
+      const url = "http://www.omdbapi.com/?apikey=ada5e6d6&s="
+      const response = await fetch( url + titles,
         {
           method: "GET",
         }
