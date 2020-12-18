@@ -7,7 +7,7 @@ state={
 }
     fetchMoviesByCategory = async () => {
         try {
-          const url = "http://localhost:3001/movies?category="+ this.props.category
+          const url = "https://netflix-backend-m5.herokuapp.com/movies?category="+ this.props.category
           const response = await fetch( url,
             {
               method: "GET",

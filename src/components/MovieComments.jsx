@@ -15,7 +15,7 @@ class MovieComments extends React.Component {
   }
   fetchComment = async () => {
     try {
-      let response = await fetch(`http://localhost:3001/movies/${this.state.id}/reviews`,
+      let response = await fetch(`https://netflix-backend-m5.herokuapp.com/movies/${this.state.id}/reviews`,
         );
       if (response.ok) {
         let fetchedcomments = await response.json()
@@ -30,7 +30,7 @@ class MovieComments extends React.Component {
     }
   }
   onDelete = async (id) => {
-    const url= `http://localhost:3001/movies/${this.state.id}/reviews/${id}`
+    const url= `https://netflix-backend-m5.herokuapp.com/movies/${this.state.id}/reviews/${id}`
     console.log(url);
     console.log(id);
     const res = await fetch( url, {

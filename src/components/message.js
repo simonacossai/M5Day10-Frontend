@@ -25,7 +25,7 @@ import './NavBar.css';
      submitComment = async (e) => {
          e.preventDefault();
          try {
-             let response = await fetch(`http://localhost:3001/movies/${this.props.id}/reviews`,
+             let response = await fetch(`https://netflix-backend-m5.herokuapp.com/movies/${this.props.id}/reviews`,
                  {
                      method: 'POST',
                      body: JSON.stringify(this.state.comment),

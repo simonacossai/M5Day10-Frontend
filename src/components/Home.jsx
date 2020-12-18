@@ -16,7 +16,7 @@ class MovieList extends React.Component {
 
   fetchMovies = async (category) => {
     try {
-      const url = "http://localhost:3001/movies"
+      const url = "https://netflix-backend-m5.herokuapp.com/movies"
       const response = await fetch( url,
         {
           method: "GET",
@@ -40,7 +40,7 @@ class MovieList extends React.Component {
   
   fetchMoviesByCategory = async (category) => {
     try {
-      const url = "http://localhost:3001/movies?category="+ category
+      const url = "https://netflix-backend-m5.herokuapp.com/movies?category="+ category
       const response = await fetch( url,
         {
           method: "GET",
