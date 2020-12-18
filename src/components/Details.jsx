@@ -11,7 +11,7 @@ class MovieDetails extends React.Component {
     componentDidMount = async () => {
         let movieIdFromTheSearchBar = this.props.match.params.id;
         try {
-            let response = await fetch(`http://localhost:3001/movies/${movieIdFromTheSearchBar}/details`,
+            let response = await fetch(`https://netflix-backend-m5.herokuapp.com/movies/${movieIdFromTheSearchBar}/details`,
                 {
                     method: 'GET',
                 })
