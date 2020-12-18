@@ -15,12 +15,8 @@ class MovieComments extends React.Component {
   }
   fetchComment = async () => {
     try {
-      let response = await fetch("https://striveschool-api.herokuapp.com/api/comments/" + this.state.id,
-        {
-          headers: new Headers({
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3OTg1Yzk4MzViMDAwMTc1ODUwNGUiLCJpYXQiOjE2MDU4Njc2MTIsImV4cCI6MTYwNzA3NzIxMn0.U6mxgBFpYT7skg3ZUkt222yuYfZdPD1e_0OV27UXk0c",
-          }),
-        });
+      let response = await fetch(`http://localhost:3001/movies/${this.state.id}/reviews`,
+        );
       if (response.ok) {
         let fetchedcomments = await response.json()
         this.setState({
@@ -34,16 +30,14 @@ class MovieComments extends React.Component {
     }
   }
   onDelete = async (id) => {
-    const url= "https://striveschool-api.herokuapp.com/api/comments/"
+    const url= `http://localhost:3001/movies/${this.state.id}/reviews/${id}`
+    console.log(url);
     console.log(id);
-    const res = await fetch( url + id, {
-      headers: new Headers({
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3OTg1Yzk4MzViMDAwMTc1ODUwNGUiLCJpYXQiOjE2MDU4Njc2MTIsImV4cCI6MTYwNzA3NzIxMn0.U6mxgBFpYT7skg3ZUkt222yuYfZdPD1e_0OV27UXk0c",
-      }),
+    const res = await fetch( url, {
       method: "DELETE",
     })
     if (res.ok) {
-      console.log("deleted");
+      alert("deleted")
       this.fetchComment();
     }
   }
@@ -75,7 +69,7 @@ class MovieComments extends React.Component {
               return (
 
                 <ListGroup.Item key={`list-item-${index}`} className="list-item " style={{ display: "flex", justifyContent: "space-between" }}>
-                  <div> {comment.author}: {comment.comment} {" "}
+                  <div>{comment.comment} {" "}
                     <Badge pill variant={variant} className="ml-3">
                       {comment.rate}
                     </Badge>

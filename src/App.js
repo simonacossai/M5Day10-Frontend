@@ -1,12 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Home from './components/Home';
-import MyFooter from "./components/footer";
+import MyFooter from "./components/Footer";
 import Navbar from './components/Navbar';
 import Details from './components/Details';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import JumbotronComponent from './components/Jumbotron';
-
+import Categories from './components/Categories';
 function App() {
   return (
    <>
@@ -32,6 +32,13 @@ function App() {
     render={(
       props 
     ) => <Details title="Details" {...props} />} 
+  />
+     <Route
+    path="/categories"
+    exact
+    render={(
+      props 
+    ) => <Categories {...props} />} 
   />
    <MyFooter/>
    </Router>

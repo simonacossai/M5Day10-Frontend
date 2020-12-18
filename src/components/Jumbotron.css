@@ -9,7 +9,7 @@
     width: 100%;
     transition: .5s ease;
     z-index: 3000;
-    background-image: linear-gradient(to top,#1f1e1e, #2f2f2f6b, #37373767, #3e3e3e41, #46464600);
+    background-image: linear-gradient(to top,#1f1e1e, #2f2f2f6b, #3737373f, #3e3e3e2d, #46464600);
   }
  .jumbotron{
      top:0;

@@ -63,3 +63,14 @@
   color: white;
 }
 
+@media(max-width: 768px){
+  .toggle{
+    color: #fff!important;
+  }
+  .navBar {
+    box-shadow: 0 4px 4px -3px #3a3a3aa8!important;
+    z-index:999999!important;
+    background-color: #1f1e1e!important;
+  }
+  
+}

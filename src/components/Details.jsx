@@ -11,7 +11,7 @@ class MovieDetails extends React.Component {
     componentDidMount = async () => {
         let movieIdFromTheSearchBar = this.props.match.params.id;
         try {
-            let response = await fetch("http://www.omdbapi.com/?apikey=ada5e6d6&i=" + movieIdFromTheSearchBar,
+            let response = await fetch(`http://localhost:3001/movies/${movieIdFromTheSearchBar}/details`,
                 {
                     method: 'GET',
                 })
@@ -34,7 +34,7 @@ class MovieDetails extends React.Component {
             <Container className="d-flex justify-content-center align-items-center text-center mt-5">
                 {this.state.movie &&
                     <div>
-                        <Row className="my-2">
+                        <Row className="mb-2 mt-5">
                             <Col md={4}>
                                 <img src={this.state.movie.Poster} alt="movie" className="img-fluid" />
                             </Col>

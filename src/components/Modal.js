@@ -53,7 +53,8 @@ class ModalForm extends React.Component {
         <Modal
           show={this.state.show}
           onHide={() => this.setState({ show: false })}
-          
+          className="mt-5"
+          style={{zIndex:"50000"}}
         >
           <Modal.Header closeButton
           >

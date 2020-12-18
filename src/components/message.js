@@ -16,7 +16,6 @@ import './NavBar.css';
     }
      
      updateCommentField = (e) => {
-        
         let comment = { ...this.state.comment } 
         let currentId = e.currentTarget.id 
         comment[currentId] = e.currentTarget.value
@@ -26,14 +25,13 @@ import './NavBar.css';
      submitComment = async (e) => {
          e.preventDefault();
          try {
-             let response = await fetch('https://striveschool-api.herokuapp.com/api/comments/',
+             let response = await fetch(`http://localhost:3001/movies/${this.props.id}/reviews`,
                  {
                      method: 'POST',
                      body: JSON.stringify(this.state.comment),
                      headers: new Headers
                          ({
                          "Content-Type": "application/json",
-                        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3OTg1Yzk4MzViMDAwMTc1ODUwNGUiLCJpYXQiOjE2MDU4Njc2MTIsImV4cCI6MTYwNzA3NzIxMn0.U6mxgBFpYT7skg3ZUkt222yuYfZdPD1e_0OV27UXk0c"
                         })
                  })
              if (response.ok) {
